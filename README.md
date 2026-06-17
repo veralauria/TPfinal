@@ -1,5 +1,5 @@
 
-# [Lampara patron modulada por PWM para verificar funcionamiento de sensor fotorresistor]
+# Lampara patron modulada por PWM para verificar funcionamiento de sensor fotorresistor
 > **Asignatura:** Electrónica Digital II- - Universidad Nacional de Córdoba
 > **Integrantes:** > * Cometta Julian
 > * Lauria Vera
@@ -9,7 +9,9 @@
 ---
 
 ##  1. Descripción General del Proyecto 
-Expliquen, en un máximo de dos párrafos, **qué hace el sistema, qué problema resuelve y a quién va dirigido**. Sean claros, concisos y directos.
+El sistema permite sensar la intensidad luminosa mediante un sensor fotoresistivo (LDR). Para valuar su respuesta, se implementa una lámpara patrón de 12 V cuya intensidad luminosa puede regularse mediante una señal PWM (Pulse Width Modulation) generada por el PIC16F887 y aplicada a través de un MOSFET. El valor del PWM se modifica mediante comunicación UART desde una aplicación web desarrollada en HTML, CSS y JavaScript (Vanilla JS), la cual también recibe las mediciones del sensor, las grafica en función del tiempo y permite visualizar su evolución. Además, el sistema dispone de un botón para encender y apagar la lámpara de potencia y de un display de siete segmentos que muestra el valor digital de tres dígitos obtenido a partir de la conversión analógico-digital del sensor.
+
+El sistema proporciona una fuente de iluminación controlada y reproducible, permitiendo evaluar la fidelidad y el comportamiento del sensor LDR frente a distintos niveles de iluminación. Está orientado a aplicaciones de laboratorio, donde resulta útil para la caracterización y calibración de sensores fotoresistivos.
 
 ### 🎯 Alcances del Proyecto (¿Qué hace y qué NO hace el sistema?)
 Delimiten claramente los objetivos alcanzados para la entrega final:
