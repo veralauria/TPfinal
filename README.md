@@ -23,9 +23,9 @@ Delimiten claramente los objetivos alcanzados para la entrega final:
 
 ### ⏩ Posibles Etapas Siguientes (Líneas Futuras)
 Planteen cómo escalaría este desarrollo en una versión 2.0 o en un ámbito profesional:
-* [Ej: Migrar el circuito de protoboard a un circuito impreso (PCB) diseñado bajo normas de compatibilidad electromagnética (EMC)].
-* [Ej: Implementar modos de bajo consumo (Sleep) administrados por hardware para permitir el uso de baterías].
-* [Ej: Diseñar una interfaz gráfica (GUI) en Python o una app móvil para la visualización remota de las variables].
+*  Migrar el circuito de protoboard a un circuito impreso (PCB) diseñado bajo normas de compatibilidad electromagnética (EMC)
+*  La función convertAdcToLux() en script.js actualmente usa lux = ADC como placeholder. Reemplazarla con una ecuación de calibración experimental para su correcta conversion.
+* Considerar la no linealidad del sensor e incorporar una correccion por software mediante una ecuacion de correccion, con el fin de obtener una estimación más precisa de la iluminancia en lux.
 
 ---
 
