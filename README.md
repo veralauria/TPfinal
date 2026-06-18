@@ -16,7 +16,7 @@ El sistema permite sensar la intensidad luminosa mediante un sensor fotoresistiv
 
 El sistema proporciona una fuente de iluminación controlada y reproducible, permitiendo evaluar la fidelidad y el comportamiento del sensor LDR frente a distintos niveles de iluminación. Está orientado a aplicaciones de laboratorio, donde resulta útil para la caracterización y calibración de sensores fotoresistivos.
 
-### 🎯 Alcances del Proyecto (¿Qué hace y qué NO hace el sistema?)
+### 🎯 Alcances del Proyecto ¿Qué hace y qué NO hace el sistema?
 
 * **El sistema SÍ es capaz de:**
 * Medir intensidad luminica mediante un fotoresisteor (LDR) conectado a una entrada analogica del PIC16F887.
