@@ -1,0 +1,12 @@
+TP.X/build/
+TP.X/dist/
+
+*.hex
+*.cof
+*.map
+*.lst
+*.o
+*.d
+*.elf
+*.err
+
