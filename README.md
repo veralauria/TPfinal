@@ -30,7 +30,7 @@ El sistema proporciona una fuente de iluminación controlada y reproducible, per
 *  Conversion de los valores sensados a Lux.
 
 ### ⏩ Posibles Etapas Siguientes (Líneas Futuras)
-Planteen cómo escalaría este desarrollo en una versión 2.0 o en un ámbito profesional:
+
 *  Migrar el circuito de protoboard a un circuito impreso (PCB) diseñado bajo normas de compatibilidad electromagnética (EMC)
 *  La función convertAdcToLux() en script.js actualmente usa lux = ADC como placeholder. Reemplazarla con una ecuación de calibración experimental para su correcta conversion.
 * Considerar la no linealidad del sensor e incorporar una correccion por software mediante una ecuacion de correccion, con el fin de obtener una estimación más precisa de la iluminancia en lux.
