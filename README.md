@@ -106,11 +106,10 @@ Imagen 2: Circuito en PCB
 ---
 
 ## 📊 5. Ensayos, Pruebas y Resultados
-Demuestren con datos empíricos que el sistema funciona correctamente. **Es obligatorio incluir registro visual**.
 
-* **Pruebas Funcionales Realizadas:** Detallen los ensayos (Ej: "Se inyectó una señal controlada para medir la precisión del ADC...").
+* **Pruebas Funcionales Realizadas:** Se vario el porcentaje del PWM y se observaron los cambios en el display y en la app web, verificando que sean iguales.
 * **Evidencia Fotográfica y Gráficos:** 
-  * *Foto del Prototipo Real:* [Insertar foto del hardware final cableado/armado en funcionamiento]
+
 <img width="1082" height="902" alt="image" src="https://github.com/user-attachments/assets/cf38ab47-f099-4503-89d9-307ad1e4c100" />
 Imagen 3: Sistema en funcionamiento, datos recibidos en aplicacion web.
 <img width="1206" height="1323" alt="image" src="https://github.com/user-attachments/assets/f6fc22e0-f618-43d0-94e8-6cad943ea91d" />
