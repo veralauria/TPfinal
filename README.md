@@ -40,9 +40,10 @@ Planteen cómo escalaría este desarrollo en una versión 2.0 o en un ámbito pr
 ## 📐 2. Arquitectura del Sistema: Hardware y Software
 
 ### 🔌 Hardware & Interconexión
-* **Diagrama de Bloques:** [Insertar imagen o link al diagrama de bloques del hardware]
-* **Esquemático del Circuito:** *[Inserte aquí la captura de imagen/render del esquemático completo desarrollado en KiCad/Altium]*
-  `![Esquemático Completo](hardware/esquematico.png)`
+* **Diagrama de Bloques:** 
+* **Esquemático del Circuito:**
+ <img width="1600" height="1070" alt="image" src="https://github.com/user-attachments/assets/0d50c731-2800-4c24-bdcc-3e50f9ebe884" />
+
 * **Descripción del Circuito y Consideraciones de Diseño:**
 * El sistema se implementa sobre una protoboard y aparte una PCB que integra la lámpara de potencia y el sensor LDR, alojados dentro de una caja negra para minimizar la incidencia de luz externa y las reflexiones, garantizando condiciones de medición más controladas.
 
@@ -115,21 +116,9 @@ Imagen 3: Sistema en funcionamiento, datos recibidos en aplicacion web.
 <img width="1206" height="1323" alt="image" src="https://github.com/user-attachments/assets/f6fc22e0-f618-43d0-94e8-6cad943ea91d" />
 Imagen 4: Sistema en funcionamiento, circuito
 
-El prototipo real es (cableado) de la protoboard y la PCB se aprecia en las imagenes 1 y 2 respectivamente.
+El prototipo real (cableado) de la protoboard y la PCB se aprecia en las imagenes 1 y 2 respectivamente.
 
 
 
----
-
-## 📂 6. Estructura del Repositorio 
-El repositorio debe mantener obligatoriamente la siguiente estructura limpia (¡Recuerden configurar correctamente el `.gitignore` para no subir carpetas temporales como `Debug/`, `Release/` o archivos `.p1` / `.d`!).
-
-```text
-├── firmware/          # Código fuente del proyecto (MPLABX / MCUXpresso / STM32Cube)
-│   ├── src/           # Archivos de código (.c)
-│   └── inc/           # Archivos de cabecera (.h)
-├── hardware/          # Archivos de diseño (KiCad/Altium), esquemáticos en PDF/Imagen y BOM
-├── docs/              # Datasheets clave, imágenes del README, notas de aplicación
-└── README.md          # Este archivo de presentación
-
+--
 
