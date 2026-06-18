@@ -68,8 +68,16 @@ Imagen 2: Circuito en PCB
   
 
 ### 💻 Arquitectura de Software (Firmware)
-* **Diagrama de Flujo o Máquina de Estados:** *[Inserte aquí la imagen del diagrama que explique el lazo principal o el comportamiento del sistema]*
-  `![Diagrama de Flujo / Máquina de Estados](docs/diagrama_software.png)`
+<img width="221" height="370" alt="BUCLEPRINCIPAL drawio" src="https://github.com/user-attachments/assets/cc8403c2-4444-48a9-a95b-851df1fd5707" />
+<img width="791" height="921" alt="LEER_UART_PWM drawio" src="https://github.com/user-attachments/assets/7a726383-0d1b-40e5-a0e5-bfcef04b534e" />
+<img width="293" height="321" alt="LEER_ADC drawio" src="https://github.com/user-attachments/assets/650f9577-8384-4fcc-b49b-a42c8b69014c" />
+<img width="569" height="531" alt="ADC_A_DECIMEL drawio" src="https://github.com/user-attachments/assets/b5ee2750-4572-4bcb-8eec-3bb23e747309" />
+<img width="588" height="841" alt="ENVIAR_ADC_UART drawio" src="https://github.com/user-attachments/assets/71067ee6-397d-4c0a-acc3-26c3e520f6f5" />
+
+<img width="761" height="691" alt="ISR drawio" src="https://github.com/user-attachments/assets/0b9e1e79-091f-45a4-be74-37c0665c1443" />
+
+
+
 
 ---
 
