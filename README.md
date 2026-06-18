@@ -96,7 +96,7 @@ Imagen 2: Circuito en PCB
 
 * **Etapa 1 (Sensor):** Conexion del sensor y verificacion de su funcionamiento, observando los valores convertidos por el ADC en el display.
 * **Etapa 2 (Transmicion correcta de datos):** Conexion de UART y control de los datos recibidos en la aplicacion web. 
-* **Etapa 3 (Envio de datos por UART):** Conexion de un LED rojo a en CCP1 para verivicar el funcionamiento correcto de PWM con los datos enviados mediante UART por la aplicacion web. Hasta este punto, no se utilizó fuente externa de 12 V.
+* **Etapa 3 (Envio de datos por UART):** Conexion de un LED rojo a en CCP1 para verificar el funcionamiento correcto de PWM con los datos enviados mediante UART por la aplicacion web. Hasta este punto, no se utilizó fuente externa de 12 V.
 * **Etapa 4 (Etapa de potencia):**  Conexion del MOSFET a CCP1 y lampara LED de potencia, utilizando fuente externa de 12 V, verificacion de su variacion en intensidad por PWM y correcto sensado del LDR.
 * **Etapa 5 (Sistema completo):**  Implementacion de la caja con interior pintado de negro para eliminar las fuentes de luz que no sean la lampara de potencia y disminuir la reflexion en las superficies de la caja, para que no influya en el valor de intensidad sensado.
   
