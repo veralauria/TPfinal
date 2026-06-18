@@ -1,0 +1,378 @@
+/* =========================================================
+   ESTILOS GENERALES
+   ========================================================= */
+
+:root {
+  --color-bg: #0f172a;
+  --color-bg-card: #1e293b;
+  --color-bg-card-alt: #273548;
+  --color-border: #334155;
+  --color-text: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-primary: #38bdf8;
+  --color-primary-dark: #0284c7;
+  --color-secondary: #475569;
+  --color-success: #22c55e;
+  --color-danger: #ef4444;
+  --color-warning: #facc15;
+
+  --radius: 10px;
+  --transition: 0.2s ease-in-out;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+/* =========================================================
+   HEADER / FOOTER
+   ========================================================= */
+
+.app-header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: var(--color-primary);
+}
+
+.subtitle {
+  margin: 0.3rem 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.app-footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+/* =========================================================
+   LAYOUT PRINCIPAL
+   ========================================================= */
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+/* =========================================================
+   TARJETAS (CARDS)
+   ========================================================= */
+
+.card {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.5rem;
+}
+
+/* =========================================================
+   CONEXIÓN SERIAL
+   ========================================================= */
+
+.connection-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.connection-row label {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+select {
+  background-color: var(--color-bg-card-alt);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-label {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.status-disconnected {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: var(--color-danger);
+}
+
+.status-connected {
+  background-color: rgba(34, 197, 94, 0.15);
+  color: var(--color-success);
+}
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+
+.btn {
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition), transform var(--transition), opacity var(--transition);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #0b1120;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--color-primary-dark);
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: #5d6e85;
+}
+
+/* =========================================================
+   CONTROL PWM
+   ========================================================= */
+
+.pwm-control {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+#pwmSlider {
+  flex: 1;
+  accent-color: var(--color-primary);
+  height: 6px;
+  cursor: pointer;
+}
+
+.pwm-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  min-width: 3.5rem;
+  text-align: right;
+}
+
+.hint {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  margin: 0.75rem 0 0;
+}
+
+/* =========================================================
+   SENSOR / LUX
+   ========================================================= */
+
+.sensor-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sensor-value-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.big-number {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--color-warning);
+  line-height: 1;
+}
+
+.big-label {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.sensor-bar-wrapper {
+  width: 100%;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 22px;
+  background-color: var(--color-bg-card-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-warning));
+  transition: width 0.25s ease-out;
+}
+
+.lux-display {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-success);
+}
+
+/* =========================================================
+   GRÁFICO
+   ========================================================= */
+
+.chart-wrapper {
+  position: relative;
+  width: 100%;
+  height: 320px;
+}
+
+/* =========================================================
+   TABLA DE REGISTRO
+   ========================================================= */
+
+#btnDownloadCsv {
+  margin-bottom: 1rem;
+}
+
+.table-wrapper {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-bg-card-alt);
+  color: var(--color-primary);
+  text-align: left;
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+tbody td {
+  padding: 0.45rem 0.8rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* =========================================================
+   INDICADORES
+   ========================================================= */
+
+.indicators-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.indicators-list li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.4rem;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.indicators-list li:last-child {
+  border-bottom: none;
+}
+
+.indicators-list strong {
+  color: var(--color-text);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .big-number {
+    font-size: 2.5rem;
+  }
+
+  .connection-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .connection-row .btn,
+  .connection-row select {
+    width: 100%;
+  }
+}

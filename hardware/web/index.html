@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monitor PIC16F887 - LDR & PWM</title>
+
+  <!-- Hoja de estilos propia -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Chart.js (vía CDN) para el gráfico en tiempo real -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <header class="app-header">
+    <h1>Monitor PIC16F887 — LDR &amp; PWM</h1>
+    <p class="subtitle">Adquisición de datos vía UART + Web Serial API</p>
+  </header>
+
+  <main class="container">
+
+    <!-- ============================================= -->
+    <!-- 1. PANEL DE CONEXIÓN SERIAL                    -->
+    <!-- ============================================= -->
+    <section class="card" id="connection-card">
+      <h2>1. Conexión Serial</h2>
+
+      <div class="connection-row">
+        <label for="baudrate">Velocidad (baudios):</label>
+        <select id="baudrate">
+          <option value="9600" selected>9600</option>
+        </select>
+
+        <button id="btnConnect" class="btn btn-primary">Conectar</button>
+        <button id="btnDisconnect" class="btn btn-secondary" disabled>Desconectar</button>
+      </div>
+
+      <div class="status-row">
+        <span class="status-label">Estado:</span>
+        <span id="connectionStatus" class="status-pill status-disconnected">Desconectado</span>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 2. CONTROL DEL PWM                             -->
+    <!-- ============================================= -->
+    <section class="card" id="pwm-card">
+      <h2>2. Control del PWM (Brillo del LED)</h2>
+
+      <div class="pwm-control">
+        <input type="range" id="pwmSlider" min="0" max="99" value="0" step="1" />
+        <span id="pwmValue" class="pwm-value">00%</span>
+      </div>
+
+      <button id="btnSendPwm" class="btn btn-primary" disabled>Enviar PWM</button>
+
+      <p class="hint">
+        Se enviarán exactamente 2 caracteres ASCII (ej: "05", "38", "75", "99").
+      </p>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 3 & 4. VISUALIZACIÓN DEL SENSOR Y LUX          -->
+    <!-- ============================================= -->
+    <section class="card" id="sensor-card">
+      <h2>3. Sensor LDR (ADC)</h2>
+
+      <div class="sensor-display">
+        <div class="sensor-value-block">
+          <span class="big-number" id="adcBigValue">---</span>
+          <span class="big-label">Valor ADC (0-255)</span>
+        </div>
+
+        <div class="sensor-bar-wrapper">
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="adcProgressBar"></div>
+          </div>
+        </div>
+
+        <div class="lux-display">
+          <span id="luxValue">Luz: --- lux</span>
+        </div>
+
+        <div class="lux-display">
+          <span id="percentValue">Intensidad: ---%</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 5. GRÁFICO EN TIEMPO REAL                      -->
+    <!-- ============================================= -->
+    <section class="card" id="chart-card">
+      <h2>4. Gráfico en Tiempo Real (Lux vs Tiempo)</h2>
+      <div class="chart-wrapper">
+        <canvas id="luxChart"></canvas>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 6 & 7. REGISTRO DE DATOS Y EXPORTACIÓN         -->
+    <!-- ============================================= -->
+    <section class="card" id="log-card">
+      <h2>5. Registro de Datos</h2>
+
+      <button id="btnDownloadCsv" class="btn btn-secondary">Descargar CSV</button>
+
+      <div class="table-wrapper">
+        <table id="dataTable">
+          <thead>
+            <tr>
+              <th>Hora</th>
+              <th>ADC</th>
+              <th>Lux</th>
+              <th>Intensidad (%)</th>
+            </tr>
+          </thead>
+          <tbody id="dataTableBody">
+            <!-- Las filas se agregan dinámicamente vía JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 8. INDICADORES GENERALES                       -->
+    <!-- ============================================= -->
+    <section class="card" id="indicators-card">
+      <h2>6. Indicadores</h2>
+      <ul class="indicators-list">
+        <li>Estado de conexión: <strong id="indicatorConnection">Desconectado</strong></li>
+        <li>Último dato recibido: <strong id="indicatorLastData">---</strong></li>
+        <li>Último PWM enviado: <strong id="indicatorLastPwm">---</strong></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <p>Proyecto de Adquisición de Datos — PIC16F887 + Web Serial API</p>
+  </footer>
+
+  <!-- Script principal de la aplicación -->
+  <script src="script.js"></script>
+</body>
+</html>
