@@ -1,5 +1,5 @@
 
-# Lampara patron modulada por PWM para verificar funcionamiento de sensor fotorresistor
+# Lampara patron modulada por PWM para verificar funcionamiento de sensor LDR
 > **Asignatura:** Electrónica Digital II- - Universidad Nacional de Córdoba
 
 > **Integrantes:**
